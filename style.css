@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Ubuntu:wght@300;400;500&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -15,14 +16,33 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 100px;
+    gap: 50px;
     min-height: 100vh;
     margin: auto;
+    flex-direction: column; /* Add for small screens */
+}
+
+.phoneImg {
+    display: none; /* Hide phone image by default */
+}
+
+@media (min-width: 768px) {
+    main {
+        flex-direction: row;
+    }
+    
+    .phoneImg {
+        display: block;
+        max-width: 400px;
+        height: auto;
+    }
 }
 
 .form-div {
     display: flex;
     flex-direction: column;
+    max-width: 350px;
+    width: 90%; /* Adjust width for smaller screens */
 }
 
 .form-div form {
@@ -33,30 +53,34 @@ main {
     justify-content: center;
     padding: 3vh 2vw;
     border: 1px solid rgba(128, 128, 128, 0.3);
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.form-div form .instaLogo {
-    width: 200px;
+.instaLogo {
+    width: 175px;
     margin: 20px 0;
 }
 
-.form-div form .input {
-    width: 90%;
+.input {
+    width: 100%;
     padding: .6rem;
     border-radius: 8px;
     border: 1px solid rgba(128, 128, 128, 0.3);
     margin: 3px;
+    box-sizing: border-box;
 }
 
 .login-btn {
-    width: 97%;
+    width: 100%;
     padding: .4rem;
     font-weight: 700;
     background-color: rgb(1, 183, 255);
     border: none;
     border-radius: 8px;
-    margin: 8px 0px;
+    margin: 8px 0;
     color: white;
+    cursor: pointer;
 }
 
 #or {
@@ -94,13 +118,20 @@ main {
 .store {
     display: flex;
     align-items: center;
+    justify-content: center; /* Center store icons */
 }
 
-#play {
-    width: 190px;
+.store a {
+    margin: 0 5px;
 }
 
+#play{
+    
+    height: 55px;
+    margin: 5px;
+}
 #microsoft {
-    width: 135px;
-    border-radius: 8px;
+    border-radius: 6px;
+    height: 40px;
+    margin: 5px; /* Add margin between store icons */
 }
